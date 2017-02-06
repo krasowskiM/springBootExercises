@@ -10,9 +10,7 @@
 </head>
 <body ng-controller="mainController">
 
-<h3>Example application made by Maciek</h3>
-
-<br>Put in the size of an array and the numbers to sort splitted by space.
+<h4>Put in the size of an array and the numbers to sort(numbers <= 9 for now).</h4>
 <form ng-submit="sortArray()">
     <table>
         <tr>
@@ -23,12 +21,24 @@
         </tr>
         <tr>
             <td>
-                <button type="reset">Reset</button>
+                Bubble sort <input ng-model="arrayForm.type" type="radio" value="bubble"/>
+            </td>
+            <td>
+                Exchange sort <input ng-model="arrayForm.type" type="radio" value="exchange"/>
+            </td>
+            <td>
+                Selection sort <input ng-model="arrayForm.type" type="radio" value="selection"/>
+            </td>
+            <td>
+                Insertion sort <input ng-model="arrayForm.type" type="radio" value="insertion"/>
             </td>
         </tr>
         <tr>
             <td>
-                <button type="submit" >Submit</button>
+                <button type="reset">Reset</button>
+            </td>
+            <td>
+                <button type="submit">Submit</button>
             </td>
         </tr>
     </table>
@@ -37,6 +47,7 @@
 <div ng-show="beforeSort != null">
     Before sorting: {{beforeSort}}.
     <br>After sorting: {{sortedArray}}.
+    <br>Time of sorting: {{timeComplexity}} ms.
 </div>
 
 </body>

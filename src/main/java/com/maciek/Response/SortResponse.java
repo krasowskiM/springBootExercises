@@ -6,10 +6,20 @@ package com.maciek.Response;
 public class SortResponse {
     private String beforeSort;
     private Integer[] sortedArray;
+    private long timeComplexity;
 
-    public SortResponse(String beforeSort, Integer[] sortedArray) {
+    public SortResponse(String beforeSort, Integer[] sortedArray, long timeComplexity) {
         this.beforeSort = beforeSort;
         this.sortedArray = sortedArray;
+        this.timeComplexity = timeComplexity;
+    }
+
+    public long getTimeComplexity() {
+        return timeComplexity;
+    }
+
+    public void setTimeComplexity(long timeComplexity) {
+        this.timeComplexity = timeComplexity;
     }
 
     public String getBeforeSort() {
