@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mainApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Example app</title>
+    <script src="webjars/angularjs/1.6.1/angular.js"></script>
+    <script src="webjars/angular-ui-router/1.0.0-beta.3/angular-ui-router.js"></script>
+    <script src="js/mainApp.js"></script>
+    <script src="js/controller.js"></script>
+</head>
+<body ng-controller="mainController">
+
+<h3>Example application made by Maciek</h3>
+
+<br>Put in the size of an array and the numbers to sort splitted by space.
+<form ng-submit="sortArray()">
+    <table>
+        <tr>
+            <td><input type="text" ng-model="arrayForm.size" placeholder="Size"/></td>
+        </tr>
+        <tr>
+            <td><input type="text" ng-model="arrayForm.numbers" placeholder="Numbers"/></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="reset">Reset</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit" >Submit</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<div ng-show="beforeSort != null">
+    Before sorting: {{beforeSort}}.
+    <br>After sorting: {{sortedArray}}.
+</div>
+
+</body>
+</html>
