@@ -36,6 +36,8 @@ public class MainController {
             case "insertion":
                 sortedArray = sortingService.insertionSort(sortRequest.getSize(), sortRequest.getNumbers());
                 break;
+            case "quick":
+                sortedArray = sortingService.qSort(sortRequest.getSize(), sortRequest.getNumbers());
         }
         t2 = System.currentTimeMillis();
         return new SortResponse(sortRequest.getNumbers(), sortedArray, t2 - t1);
