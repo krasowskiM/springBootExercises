@@ -6,5 +6,11 @@ mainApp.controller('mainController', function ($scope, $http) {
             $scope.sortedArray = response.data.sortedArray;
             $scope.timeComplexity = response.data.timeComplexity;
         });
-    }
+    };
+
+    $scope.mergeArrays = function () {
+        $http.post('/merge', $scope.mergeForm).then(function (response) {
+            $scope.mergedArray = response.data.mergedArray;
+        });
+    };
 });
