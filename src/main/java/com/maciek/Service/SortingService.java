@@ -166,8 +166,9 @@ public class SortingService {
 
         while (interval <= array.length / 3) {
             interval = interval * 3 + 1;
+        }
 
-            while (interval > 0) {
+        while (interval > 0) {
                 for (outer = interval; outer < array.length; outer++) {
                     temp = array[outer];
                     inner = outer;
@@ -182,7 +183,7 @@ public class SortingService {
 
                 interval = (interval - 1) / 3;
             }
-        }
+
 
         return array;
     }

@@ -10,30 +10,22 @@
 </head>
 <body ng-controller="mainController">
 
-<h4>Put in the size of an array and the numbers to sort(numbers <= 9 for now).</h4>
+<h4>Put in the size of an array and the numbers to sort and separate them with spaces.</h4>
 <form ng-submit="sortArray()">
     <table>
-        <tr>
-            <td><input type="text" ng-model="arrayForm.size" placeholder="Size"/></td>
-        </tr>
         <tr>
             <td><input type="text" ng-model="arrayForm.numbers" placeholder="Numbers"/></td>
         </tr>
         <tr>
             <td>
-                Bubble sort <input ng-model="arrayForm.type" type="radio" value="bubble"/>
-            </td>
-            <td>
-                Exchange sort <input ng-model="arrayForm.type" type="radio" value="exchange"/>
-            </td>
-            <td>
-                Selection sort <input ng-model="arrayForm.type" type="radio" value="selection"/>
-            </td>
-            <td>
-                Insertion sort <input ng-model="arrayForm.type" type="radio" value="insertion"/>
-            </td>
-            <td>
-                Quick sort <input ng-model="arrayForm.type" type="radio" value="quick"/>
+                <select ng-model="arrayForm.type">
+                    <option value="bubble">Bubble sort</option>
+                    <option value="exchange">Exchange sort</option>
+                    <option value="selection">Selection sort</option>
+                    <option value="insertion">Insertion sort</option>
+                    <option value="shell">Shell sort</option>
+                    <option value="quick">Quick sort</option>
+                </select>
             </td>
         </tr>
         <tr>
@@ -51,6 +43,26 @@
     Before sorting: {{beforeSort}}.
     <br>After sorting: {{sortedArray}}.
     <br>Time of sorting: {{timeComplexity}} ms.
+</div>
+
+<h4>Put in the numbers to get merged array from them(separate with spaces).</h4>
+
+<form ng-submit="mergeArrays()">
+    <table>
+        <tr>
+            <td><input type="text" ng-model="mergeForm.arrayOne" placeholder="First array"></td>
+        </tr>
+        <tr>
+            <td><input type="text" ng-model="mergeForm.arrayTwo" placeholder="Second array"></td>
+        </tr>
+        <tr>
+            <td><input type="submit"></td>
+        </tr>
+    </table>
+</form>
+
+<div ng-show="mergedArray != null">
+    Merged arrays: {{mergedArray}}.
 </div>
 
 </body>
